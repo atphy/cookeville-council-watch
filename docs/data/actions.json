@@ -555,7 +555,9 @@
           "Gilbert": "aye",
           "Eldridge": "aye",
           "Parkison": "aye"
-        }
+        },
+        "motion_label": "Vote on motion to postpone",
+        "note": "The Council voted on postponing consideration of the sale/disposition, not on approving the sale itself. Staff requested time to research potential uses for the property."
       },
       "evidence": [
         {
