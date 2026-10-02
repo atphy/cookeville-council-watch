@@ -81,6 +81,6 @@ function show(data) {
   render();
 }
 
-fetch('data/actions.json').then(response => response.json()).then(show).catch(() => {
+fetch('data/actions.json?v=20261002-sentiment-sample').then(response => response.json()).then(show).catch(() => {
   records.innerHTML = '<p class="empty">The public data file could not be loaded.</p>';
 });
