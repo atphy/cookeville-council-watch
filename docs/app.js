@@ -1,12 +1,6 @@
 const records = document.querySelector('#records');
 const showNoComment = document.querySelector('#show-no-comment');
 
-function commentClass(comment) {
-  if (comment.status === 'none') return 'none';
-  if (comment.status === 'counted') return 'counted';
-  return 'review';
-}
-
 function opinions(comment) {
   if (comment.opinions) return comment.opinions;
   if (comment.status === 'counted' && comment.sentiment === 'support') return { for: comment.speaker_count, against: 0, other: 0 };
@@ -38,10 +32,10 @@ function comparisonClass(action) {
 function comparisonLabel(action) {
   const direction = sentimentDirection(action.public_comment);
   const temporary = action.public_comment.is_sample ? ' · temporary sample data' : '';
-  if (comparisonClass(action) === 'alignment') return `Vote aligned with public sentiment${temporary}`;
-  if (comparisonClass(action) === 'discrepancy') return `Vote conflicts with public sentiment${temporary}`;
+  if (comparisonClass(action) === 'alignment') return `Council action matched net public opinion${temporary}`;
+  if (comparisonClass(action) === 'discrepancy') return `Council passed despite net public opposition${temporary}`;
   if (direction === 'mixed') return 'Mixed public opinion';
-  if (direction === 'review') return 'Needs manual review';
+  if (direction === 'review') return 'Public-comment record needs review';
   return 'No public comment recorded';
 }
 
@@ -54,6 +48,18 @@ function opinionSummary(comment) {
 function voteLabel(votes) {
   if (votes.status === 'verification-needed') return 'Outcome recorded; individual votes need verification';
   return Object.entries(votes.members).map(([name, vote]) => `${name}: ${vote}`).join(' · ');
+}
+
+function voteMarkup(votes) {
+  if (votes.status === 'verification-needed') {
+    return '<div class="council-vote pending"><span class="section-label">Council vote</span><span>Outcome recorded; individual member votes need verification</span></div>';
+  }
+  const labels = { aye: 'Yes', nay: 'No', absent: '(absent)', abstain: '(abstained)', recused: '(recused)' };
+  const members = Object.entries(votes.members).map(([name, vote]) => {
+    const state = ['aye', 'nay'].includes(vote) ? vote : 'not-voting';
+    return `<span class="member-vote ${state}"><b>${name}</b> <span>${labels[vote] || `(${vote})`}</span></span>`;
+  }).join('');
+  return `<div class="council-vote"><span class="section-label">Council vote</span><span class="member-votes">${members}</span></div>`;
 }
 
 function show(data) {
@@ -72,7 +78,8 @@ function show(data) {
       return `<article class="record ${comparisonClass(action)}">
         <div class="record-head"><p>${action.date} · ${action.item_label}</p><span class="outcome">${action.outcome}</span></div>
         <h3>${action.title}</h3>
-        <div class="opinions">${opinionSummary(c)}<span class="comparison ${comparisonClass(action)}">${comparisonLabel(action)}</span></div>
+        <div class="public-opinions"><span class="section-label">Public comment</span><div class="opinions">${opinionSummary(c)}<span class="comparison ${comparisonClass(action)}">${comparisonLabel(action)}</span></div></div>
+        ${voteMarkup(action.votes)}
         <details><summary>Votes & source</summary><p><strong>Vote:</strong> ${voteLabel(action.votes)}</p><p><strong>Evidence:</strong> ${evidence}</p><p>${c.note}</p></details>
       </article>`;
     }).join('') || '<p class="empty">No comment records need review yet. Check “Show items with no public comment” to browse the full record.</p>';
