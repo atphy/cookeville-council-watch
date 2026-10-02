@@ -26,7 +26,7 @@ body {
   background-image:linear-gradient(135deg,transparent 48%,#fff 49%,transparent 50%);
   background-size:32px 32px;
 }
-.masthead .wrap { position:relative; z-index:1; }
+.masthead .wrap { position:relative; z-index:1; width:min(860px,calc(100% - 2rem)); margin:auto; }
 .eyebrow {
   margin:0 0 .6rem; color:#ffdfb8; text-transform:uppercase;
   letter-spacing:.13em; font-weight:800; font-size:.76rem;
