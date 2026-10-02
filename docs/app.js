@@ -1,5 +1,5 @@
 const records = document.querySelector('#records');
-const filter = document.querySelector('#filter');
+const showNoComment = document.querySelector('#show-no-comment');
 
 function commentClass(comment) {
   if (comment.status === 'none') return 'none';
@@ -7,11 +7,28 @@ function commentClass(comment) {
   return 'review';
 }
 
-function commentLabel(comment) {
-  if (comment.status === 'none') return 'No public comment recorded';
-  if (comment.status === 'counted') return `${comment.speaker_count} counted comment${comment.speaker_count === 1 ? '' : 's'}`;
-  if (comment.status === 'not-recorded') return 'No item-specific comment record';
-  return 'Public comment needs review';
+function opinions(comment) {
+  if (comment.opinions) return comment.opinions;
+  if (comment.status === 'counted' && comment.sentiment === 'support') return { for: comment.speaker_count, against: 0, other: 0 };
+  if (comment.status === 'counted' && comment.sentiment === 'oppose') return { for: 0, against: comment.speaker_count, other: 0 };
+  if (comment.status === 'counted' && comment.sentiment === 'procedural-question') return { for: 0, against: 0, other: comment.speaker_count };
+  if (comment.status === 'none') return { for: 0, against: 0, other: 0 };
+  return null;
+}
+
+function opinionClass(comment) {
+  const counts = opinions(comment);
+  if (!counts) return comment.status === 'none' ? 'none' : 'review';
+  if (counts.against > counts.for && counts.against > 0) return 'against';
+  if (counts.for > counts.against && counts.for > 0) return 'for';
+  if (counts.other > 0) return 'other';
+  return 'none';
+}
+
+function opinionSummary(comment) {
+  const counts = opinions(comment);
+  if (!counts) return 'Needs manual review';
+  return `<span class="opinion for">For <b>${counts.for}</b></span><span class="opinion against">Against <b>${counts.against}</b></span><span class="opinion other">Other <b>${counts.other}</b></span>`;
 }
 
 function voteLabel(votes) {
@@ -22,26 +39,25 @@ function voteLabel(votes) {
 function show(data) {
   const actions = data.actions;
   document.querySelector('#action-count').textContent = actions.length;
-  document.querySelector('#comment-count').textContent = actions.filter(a => a.public_comment.status === 'counted').length;
-  document.querySelector('#no-comment-count').textContent = actions.filter(a => a.public_comment.status === 'none').length;
+  const total = (key) => actions.reduce((sum, action) => sum + (opinions(action.public_comment)?.[key] || 0), 0);
+  document.querySelector('#for-count').textContent = total('for');
+  document.querySelector('#against-count').textContent = total('against');
+  document.querySelector('#other-count').textContent = total('other');
 
   function render() {
-    const selected = filter.value;
-    const visible = actions.filter(action => {
-      const status = action.public_comment.status;
-      return selected === 'all' || (selected === 'commented' && status === 'counted') || (selected === 'none' && status === 'none') || (selected === 'needs-review' && !['counted', 'none'].includes(status));
-    });
+    const visible = actions.filter(action => showNoComment.checked || action.public_comment.status !== 'none');
     records.innerHTML = visible.map(action => {
       const c = action.public_comment;
       const evidence = action.evidence.map(e => `${e.file.replace('-city-council-minutes.pdf', '')}, p. ${e.page}`).join('; ');
-      return `<article class="record ${commentClass(c)}">
-        <div class="record-head"><p>${action.date} · ${action.item_label}</p><span class="tag ${commentClass(c)}">${commentLabel(c)}</span></div>
+      return `<article class="record ${opinionClass(c)}">
+        <div class="record-head"><p>${action.date} · ${action.item_label}</p><span class="outcome">${action.outcome}</span></div>
         <h3>${action.title}</h3>
-        <dl><div><dt>Outcome</dt><dd class="outcome">${action.outcome}</dd></div><div><dt>Public-comment record</dt><dd>${c.note}</dd></div><div><dt>Recorded vote</dt><dd>${voteLabel(action.votes)}</dd></div><div><dt>Evidence</dt><dd>${evidence}</dd></div></dl>
+        <div class="opinions">${opinionSummary(c)}</div>
+        <details><summary>Votes & source</summary><p><strong>Vote:</strong> ${voteLabel(action.votes)}</p><p><strong>Evidence:</strong> ${evidence}</p><p>${c.note}</p></details>
       </article>`;
-    }).join('') || '<p class="empty">No records match this filter.</p>';
+    }).join('') || '<p class="empty">No comment records need review yet. Check “Show items with no public comment” to browse the full record.</p>';
   }
-  filter.addEventListener('change', render);
+  showNoComment.addEventListener('change', render);
   render();
 }
 
