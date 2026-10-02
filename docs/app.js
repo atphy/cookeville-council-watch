@@ -50,8 +50,9 @@ function opinionSummary(comment) {
 }
 
 function referenceLabel(action) {
-  const match = action.item_label.match(/\b(?:Resolution|Ordinance)\s+[A-Za-z0-9-]+\b/i);
-  return match ? match[0] : '';
+  return action.item_label.split(' · ').find(part =>
+    part.startsWith('Resolution ') || part.startsWith('Ordinance ')
+  ) || '';
 }
 
 function voteLabel(votes) {
