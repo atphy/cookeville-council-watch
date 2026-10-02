@@ -107,6 +107,6 @@ function show(data) {
   render();
 }
 
-fetch('data/actions.json?v=20261002-outcome-summary-1').then(response => response.json()).then(show).catch(() => {
+fetch('data/actions.json?v=20261002-transcript-audit-1').then(response => response.json()).then(show).catch(() => {
   records.innerHTML = '<p class="empty">The public data file could not be loaded.</p>';
 });
