@@ -39,6 +39,10 @@
         {
           "file": "2026-09-03-city-council-minutes.pdf",
           "page": 1
+        },
+        {
+          "file": "2026-09-03-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -53,7 +57,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "The minutes state that there were no public comments concerning this item."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "recorded",
@@ -69,6 +73,10 @@
         {
           "file": "2026-09-03-city-council-minutes.pdf",
           "page": 2
+        },
+        {
+          "file": "2026-09-03-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -83,7 +91,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "The minutes state that there were no public comments concerning the consent agenda."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "verification-needed",
@@ -97,6 +105,10 @@
         {
           "file": "2026-09-03-city-council-minutes.pdf",
           "page": 3
+        },
+        {
+          "file": "2026-09-03-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -111,7 +123,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "The minutes state that there were no public comments concerning the consent agenda."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "verification-needed",
@@ -125,6 +137,10 @@
         {
           "file": "2026-09-03-city-council-minutes.pdf",
           "page": 3
+        },
+        {
+          "file": "2026-09-03-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -139,7 +155,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "The minutes state that there were no public comments concerning the consent agenda."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "verification-needed",
@@ -153,6 +169,10 @@
         {
           "file": "2026-09-03-city-council-minutes.pdf",
           "page": 3
+        },
+        {
+          "file": "2026-09-03-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -167,7 +187,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "The minutes state that there were no public comments concerning the consent agenda."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "verification-needed",
@@ -181,6 +201,10 @@
         {
           "file": "2026-09-03-city-council-minutes.pdf",
           "page": 3
+        },
+        {
+          "file": "2026-09-03-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -195,7 +219,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "The minutes state that there were no public comments concerning the consent agenda."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "verification-needed",
@@ -209,6 +233,10 @@
         {
           "file": "2026-09-03-city-council-minutes.pdf",
           "page": 3
+        },
+        {
+          "file": "2026-09-03-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -223,7 +251,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "The minutes state that there were no public comments concerning this item."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "verification-needed",
@@ -233,6 +261,10 @@
         {
           "file": "2026-09-03-city-council-minutes.pdf",
           "page": 3
+        },
+        {
+          "file": "2026-09-03-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -247,7 +279,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "The minutes state that there were no public comments concerning this item."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "verification-needed",
@@ -261,6 +293,10 @@
         {
           "file": "2026-09-03-city-council-minutes.pdf",
           "page": 4
+        },
+        {
+          "file": "2026-09-03-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -275,7 +311,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "The minutes state that there were no public comments concerning this item."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "verification-needed",
@@ -285,6 +321,10 @@
         {
           "file": "2026-09-03-city-council-minutes.pdf",
           "page": 4
+        },
+        {
+          "file": "2026-09-03-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -299,7 +339,7 @@
         "status": "recorded-unassigned",
         "speaker_count": null,
         "sentiment": "not-determinable",
-        "note": "The transcript records Axon-related remarks during the grouped consent-agenda block, but speakers did not distinguish the two Axon contracts from the other grouped actions. No count is assigned to this combined vote."
+        "note": "Transcript review found item-specific Axon-related remarks during the grouped consent-agenda block, but speakers did not distinguish the two Axon contracts from the other grouped actions. No count is assigned to this combined vote."
       },
       "votes": {
         "status": "recorded",
@@ -333,7 +373,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "No one spoke at this public hearing."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "recorded",
@@ -349,6 +389,10 @@
         {
           "file": "2026-09-17-city-council-minutes.pdf",
           "page": 3
+        },
+        {
+          "file": "2026-09-17-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -363,7 +407,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "The minutes state that there were no public comments concerning this item."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "recorded",
@@ -379,6 +423,10 @@
         {
           "file": "2026-09-17-city-council-minutes.pdf",
           "page": 3
+        },
+        {
+          "file": "2026-09-17-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -436,7 +484,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "The minutes state that there were no public comments concerning this item."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "recorded",
@@ -452,6 +500,10 @@
         {
           "file": "2026-09-17-city-council-minutes.pdf",
           "page": 4
+        },
+        {
+          "file": "2026-09-17-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -466,7 +518,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "The minutes state that there were no public comments concerning this item."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "recorded",
@@ -482,6 +534,10 @@
         {
           "file": "2026-09-17-city-council-minutes.pdf",
           "page": 5
+        },
+        {
+          "file": "2026-09-17-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -496,7 +552,12 @@
         "status": "counted",
         "speaker_count": 1,
         "sentiment": "support",
-        "note": "One resident applauded pursuit of the program and expressed appreciation."
+        "opinions": {
+          "for": 1,
+          "against": 0,
+          "other": 0
+        },
+        "note": "Transcript review found one item-specific speaker who asked the Council to vote yes."
       },
       "votes": {
         "status": "recorded",
@@ -512,6 +573,10 @@
         {
           "file": "2026-09-17-city-council-minutes.pdf",
           "page": 5
+        },
+        {
+          "file": "2026-09-17-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -526,7 +591,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "The minutes state that there were no public comments concerning this item."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "recorded",
@@ -542,6 +607,10 @@
         {
           "file": "2026-09-17-city-council-minutes.pdf",
           "page": 6
+        },
+        {
+          "file": "2026-09-17-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -556,7 +625,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "The minutes state that there were no public comments concerning this item."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "recorded",
@@ -572,6 +641,10 @@
         {
           "file": "2026-09-17-city-council-minutes.pdf",
           "page": 6
+        },
+        {
+          "file": "2026-09-17-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -586,7 +659,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "The minutes state that there were no public comments concerning this item."
+        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
       },
       "votes": {
         "status": "recorded",
@@ -602,6 +675,10 @@
         {
           "file": "2026-09-17-city-council-minutes.pdf",
           "page": 7
+        },
+        {
+          "file": "2026-09-17-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     },
@@ -616,7 +693,12 @@
         "status": "counted",
         "speaker_count": 1,
         "sentiment": "procedural-question",
-        "note": "One resident supported the 39 Depot Project but questioned presenting the initial and detail resolutions together; this is not coded as support for or opposition to the resolution."
+        "opinions": {
+          "for": 0,
+          "against": 0,
+          "other": 1
+        },
+        "note": "Transcript review found one speaker who supported the 39 Depot Project but questioned considering the initial and detailed bond resolutions at the same meeting; no clear request to approve or reject this resolution."
       },
       "votes": {
         "status": "recorded",
@@ -632,6 +714,10 @@
         {
           "file": "2026-09-17-city-council-minutes.pdf",
           "page": 7
+        },
+        {
+          "file": "2026-09-17-city-council-transcript.txt",
+          "note": "Transcript review; item public-comment block"
         }
       ]
     }
