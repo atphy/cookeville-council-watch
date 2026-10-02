@@ -37,9 +37,9 @@ function comparisonClass(action) {
 
 function comparisonLabel(action) {
   const direction = sentimentDirection(action.public_comment);
-  if (action.public_comment.is_sample) return 'Temporary sample data';
-  if (comparisonClass(action) === 'alignment') return 'Vote aligned with public sentiment';
-  if (comparisonClass(action) === 'discrepancy') return 'Vote conflicts with public sentiment';
+  const temporary = action.public_comment.is_sample ? ' · temporary sample data' : '';
+  if (comparisonClass(action) === 'alignment') return `Vote aligned with public sentiment${temporary}`;
+  if (comparisonClass(action) === 'discrepancy') return `Vote conflicts with public sentiment${temporary}`;
   if (direction === 'mixed') return 'Mixed public opinion';
   if (direction === 'review') return 'Needs manual review';
   return 'No public comment recorded';
@@ -47,7 +47,7 @@ function comparisonLabel(action) {
 
 function opinionSummary(comment) {
   const counts = opinions(comment);
-  if (!counts) return 'Needs manual review';
+  if (!counts) return '';
   return `<span class="opinion for">For <b>${counts.for}</b></span><span class="opinion against">Against <b>${counts.against}</b></span><span class="opinion other">Other <b>${counts.other}</b></span>`;
 }
 
@@ -81,6 +81,6 @@ function show(data) {
   render();
 }
 
-fetch('data/actions.json?v=20261002-sentiment-sample').then(response => response.json()).then(show).catch(() => {
+fetch('data/actions.json?v=20261002-sentiment-sample-2').then(response => response.json()).then(show).catch(() => {
   records.innerHTML = '<p class="empty">The public data file could not be loaded.</p>';
 });
