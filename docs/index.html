@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A source-linked record of Cookeville City Council action items, public comment, and votes." />
+    <title>Cookeville Council Watch</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="wrap">
+        <p class="eyebrow">Independent public record</p>
+        <h1>Cookeville Council Watch</h1>
+        <p class="intro">Formal City Council actions, item-specific public comment, and recorded votes - beginning with the current council.</p>
+      </div>
+    </header>
+    <main class="wrap">
+      <section class="method" aria-labelledby="method-title">
+        <h2 id="method-title">How this record works</h2>
+        <p>Every action item is logged, including those with no public comment. Comments count toward an item only when made during that item’s official public-comment or public-hearing block. General remarks made elsewhere in the meeting are not assigned to a vote.</p>
+      </section>
+      <section class="summary" aria-label="Tracker summary">
+        <div><strong id="action-count">-</strong><span>action items logged</span></div>
+        <div><strong id="comment-count">-</strong><span>with item-specific comment</span></div>
+        <div><strong id="no-comment-count">-</strong><span>with no comment recorded</span></div>
+      </section>
+      <div class="toolbar">
+        <h2>Action record</h2>
+        <label>Show <select id="filter"><option value="all">All items</option><option value="commented">Comment recorded</option><option value="none">No comment recorded</option><option value="needs-review">Needs comment review</option></select></label>
+      </div>
+      <p class="legend"><span class="tag counted">Counted comment</span><span class="tag review">Comment needs review</span><span class="tag none">No comment recorded</span></p>
+      <section id="records" class="records" aria-live="polite"></section>
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">Sources and corrections</h2>
+        <p>Each record identifies the official minutes page used. The evidence manifest records the unmodified source files and their checksums. If a record needs correction, please cite the meeting date, agenda item, and source.</p>
+      </section>
+    </main>
+    <footer><div class="wrap">Not affiliated with the City of Cookeville.</div></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
