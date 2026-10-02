@@ -49,10 +49,13 @@ function opinionSummary(comment) {
   return `<span class="opinion for">For <b>${counts.for}</b></span><span class="opinion against">Against <b>${counts.against}</b></span><span class="opinion other">Other <b>${counts.other}</b></span>`;
 }
 
-function referenceLabel(action) {
-  return action.item_label.split(' · ').find(part =>
+function referenceMarkup(action) {
+  const reference = action.item_label.split(' · ').find(part =>
     part.startsWith('Resolution ') || part.startsWith('Ordinance ')
-  ) || '';
+  );
+  if (!reference) return '';
+  const [kind, ...number] = reference.split(' ');
+  return `<p class="reference"><span>${kind} number</span> ${number.join(' ')}</p>`;
 }
 
 function voteLabel(votes) {
@@ -79,27 +82,29 @@ function show(data) {
     action.outcome === 'passed' && comparisonClass(action) === 'discrepancy'
   ).length;
   const matchedOpinion = actions.filter(action => comparisonClass(action) === 'alignment').length;
-  const needsReview = actions.filter(action => comparisonClass(action) === 'review').length;
+  const countedRemarks = actions.reduce((sum, action) => {
+    const c = opinions(action.public_comment);
+    return sum + (c ? c.for + c.against + c.other : 0);
+  }, 0);
   document.querySelector('#opposition-pass-count').textContent = passedDespiteOpposition;
   document.querySelector('#alignment-count').textContent = matchedOpinion;
-  document.querySelector('#review-count').textContent = needsReview;
+  document.querySelector('#remark-count').textContent = countedRemarks;
 
   function render() {
-    const visible = actions.filter(action => showNoComment.checked || action.public_comment.status !== 'none');
+    const visible = actions.filter(action => showNoComment.checked || action.public_comment.status === 'counted');
     records.innerHTML = visible.map(action => {
       const c = action.public_comment;
       const evidence = action.evidence.map(e => {
         const source = e.file.replace('-city-council-minutes.pdf', '');
         return e.page ? `${source}, p. ${e.page}` : `${source}${e.note ? ` (${e.note})` : ''}`;
       }).join('; ');
-      const reference = referenceLabel(action);
+      const reference = referenceMarkup(action);
       return `<article class="record ${comparisonClass(action)}">
         <div class="record-head"><p>${action.date} · ${action.item_label}</p><span class="outcome">${action.outcome}</span></div>
-        ${reference ? `<span class="reference">${reference}</span>` : ''}
+        ${reference}
         <h3>${action.title}</h3>
         <div class="public-opinions"><span class="section-label">Public comment</span><div class="opinions">${opinionSummary(c)}<span class="comparison ${comparisonClass(action)}">${comparisonLabel(action)}</span></div></div>
         ${voteMarkup(action.votes)}
-        <details><summary>Votes & source</summary><p><strong>Vote:</strong> ${voteLabel(action.votes)}</p><p><strong>Evidence:</strong> ${evidence}</p><p>${c.note}</p></details>
       </article>`;
     }).join('') || '<p class="empty">No comment records need review yet. Check “Show items with no public comment” to browse the full record.</p>';
   }
@@ -107,6 +112,6 @@ function show(data) {
   render();
 }
 
-fetch('data/actions.json?v=20261002-transcript-audit-1').then(response => response.json()).then(show).catch(() => {
+fetch('data/actions.json?v=20261002-clean-records-1').then(response => response.json()).then(show).catch(() => {
   records.innerHTML = '<p class="empty">The public data file could not be loaded.</p>';
 });
