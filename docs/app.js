@@ -33,7 +33,11 @@ function comparisonLabel(action) {
   const direction = sentimentDirection(action.public_comment);
   const temporary = action.public_comment.is_sample ? ' · temporary sample data' : '';
   if (comparisonClass(action) === 'alignment') return `Council action matched net public opinion${temporary}`;
-  if (comparisonClass(action) === 'discrepancy') return `Council passed despite net public opposition${temporary}`;
+  if (comparisonClass(action) === 'discrepancy') {
+    return action.outcome === 'passed'
+      ? `Council passed despite net public opposition${temporary}`
+      : `Council action ran contrary to net public opinion${temporary}`;
+  }
   if (direction === 'mixed') return 'Mixed public opinion';
   if (direction === 'review') return 'Public-comment record needs review';
   return 'No public comment recorded';
@@ -43,6 +47,11 @@ function opinionSummary(comment) {
   const counts = opinions(comment);
   if (!counts) return '';
   return `<span class="opinion for">For <b>${counts.for}</b></span><span class="opinion against">Against <b>${counts.against}</b></span><span class="opinion other">Other <b>${counts.other}</b></span>`;
+}
+
+function referenceLabel(action) {
+  const match = action.item_label.match(/\\b(?:Resolution|Ordinance)\\s+[A-Za-z0-9-]+\\b/i);
+  return match ? match[0] : '';
 }
 
 function voteLabel(votes) {
@@ -65,18 +74,27 @@ function voteMarkup(votes) {
 function show(data) {
   const actions = data.actions;
   document.querySelector('#action-count').textContent = actions.length;
-  const total = (key) => actions.reduce((sum, action) => sum + (opinions(action.public_comment)?.[key] || 0), 0);
-  document.querySelector('#for-count').textContent = total('for');
-  document.querySelector('#against-count').textContent = total('against');
-  document.querySelector('#other-count').textContent = total('other');
+  const passedDespiteOpposition = actions.filter(action =>
+    action.outcome === 'passed' && comparisonClass(action) === 'discrepancy'
+  ).length;
+  const matchedOpinion = actions.filter(action => comparisonClass(action) === 'alignment').length;
+  const needsReview = actions.filter(action => comparisonClass(action) === 'review').length;
+  document.querySelector('#opposition-pass-count').textContent = passedDespiteOpposition;
+  document.querySelector('#alignment-count').textContent = matchedOpinion;
+  document.querySelector('#review-count').textContent = needsReview;
 
   function render() {
     const visible = actions.filter(action => showNoComment.checked || action.public_comment.status !== 'none');
     records.innerHTML = visible.map(action => {
       const c = action.public_comment;
-      const evidence = action.evidence.map(e => `${e.file.replace('-city-council-minutes.pdf', '')}, p. ${e.page}`).join('; ');
+      const evidence = action.evidence.map(e => {
+        const source = e.file.replace('-city-council-minutes.pdf', '');
+        return e.page ? `${source}, p. ${e.page}` : `${source}${e.note ? ` (${e.note})` : ''}`;
+      }).join('; ');
+      const reference = referenceLabel(action);
       return `<article class="record ${comparisonClass(action)}">
         <div class="record-head"><p>${action.date} · ${action.item_label}</p><span class="outcome">${action.outcome}</span></div>
+        ${reference ? `<span class="reference">${reference}</span>` : ''}
         <h3>${action.title}</h3>
         <div class="public-opinions"><span class="section-label">Public comment</span><div class="opinions">${opinionSummary(c)}<span class="comparison ${comparisonClass(action)}">${comparisonLabel(action)}</span></div></div>
         ${voteMarkup(action.votes)}
@@ -88,6 +106,6 @@ function show(data) {
   render();
 }
 
-fetch('data/actions.json?v=20261002-transcript-counts-1').then(response => response.json()).then(show).catch(() => {
+fetch('data/actions.json?v=20261002-outcome-summary-1').then(response => response.json()).then(show).catch(() => {
   records.innerHTML = '<p class="empty">The public data file could not be loaded.</p>';
 });
