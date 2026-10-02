@@ -44,18 +44,15 @@ function comparisonLabel(action) {
 }
 
 function opinionSummary(comment) {
+  if (comment.status === 'none') return '';
   const counts = opinions(comment);
   if (!counts) return '';
   return `<span class="opinion for">For <b>${counts.for}</b></span><span class="opinion against">Against <b>${counts.against}</b></span><span class="opinion other">Other <b>${counts.other}</b></span>`;
 }
 
-function referenceMarkup(action) {
-  const reference = action.item_label.split(' · ').find(part =>
-    part.startsWith('Resolution ') || part.startsWith('Ordinance ')
-  );
-  if (!reference) return '';
-  const [kind, ...number] = reference.split(' ');
-  return `<p class="reference"><span>${kind} number</span> ${number.join(' ')}</p>`;
+function agendaItemLabel(action) {
+  const [item, ...rest] = action.item_label.split(' · ');
+  return `Agenda item ${item}${rest.length ? ` · ${rest.join(' · ')}` : ''}`;
 }
 
 function voteMarkup(votes) {
@@ -76,23 +73,17 @@ function show(data) {
   const passedDespiteOpposition = actions.filter(action =>
     action.outcome === 'passed' && comparisonClass(action) === 'discrepancy'
   ).length;
-  const matchedOpinion = actions.filter(action => comparisonClass(action) === 'alignment').length;
-  const countedRemarks = actions.reduce((sum, action) => {
-    const c = opinions(action.public_comment);
-    return sum + (c ? c.for + c.against + c.other : 0);
-  }, 0);
+  const commentedActions = actions.filter(action => action.public_comment.status === 'counted').length;
   document.querySelector('#opposition-pass-count').textContent = passedDespiteOpposition;
-  document.querySelector('#alignment-count').textContent = matchedOpinion;
-  document.querySelector('#remark-count').textContent = countedRemarks;
+  document.querySelector('#commented-action-count').textContent = commentedActions;
 
   function render() {
     const visible = actions.filter(action => showNoComment.checked || action.public_comment.status === 'counted');
     records.innerHTML = visible.map(action => {
       const c = action.public_comment;
-      const reference = referenceMarkup(action);
+      const agendaItem = agendaItemLabel(action);
       return `<article class="record ${comparisonClass(action)}">
-        <div class="record-head"><p>${action.date} · ${action.item_label}</p><span class="outcome">${action.outcome}</span></div>
-        ${reference}
+        <div class="record-head"><p>${action.date} · ${agendaItem}</p><span class="outcome">${action.outcome}</span></div>
         <h3>${action.title}</h3>
         <div class="public-opinions"><span class="section-label">Public comment</span><div class="opinions">${opinionSummary(c)}<span class="comparison ${comparisonClass(action)}">${comparisonLabel(action)}</span></div></div>
         ${voteMarkup(action.votes)}
@@ -104,6 +95,6 @@ function show(data) {
   render();
 }
 
-fetch('data/actions.json?v=20261002-axon-comments-1').then(response => response.json()).then(show).catch(() => {
+fetch('data/actions.json?v=20261002-clear-headers-1').then(response => response.json()).then(show).catch(() => {
   records.innerHTML = '<p class="empty">The public data file could not be loaded.</p>';
 });
