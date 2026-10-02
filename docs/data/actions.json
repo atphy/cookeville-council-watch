@@ -57,7 +57,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "No one spoke during this item's official public-comment opportunity."
       },
       "votes": {
         "status": "recorded",
@@ -91,7 +91,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "The item drew no public comment in its designated discussion period."
       },
       "votes": {
         "status": "recorded",
@@ -130,7 +130,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "No item-specific remarks were made before the Council acted."
       },
       "votes": {
         "status": "recorded",
@@ -169,7 +169,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "No one spoke during this item's official public-comment opportunity."
       },
       "votes": {
         "status": "recorded",
@@ -208,7 +208,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "The item drew no public comment in its designated discussion period."
       },
       "votes": {
         "status": "recorded",
@@ -247,7 +247,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "No item-specific remarks were made before the Council acted."
       },
       "votes": {
         "status": "recorded",
@@ -286,7 +286,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "No one spoke during this item's official public-comment opportunity."
       },
       "votes": {
         "status": "recorded",
@@ -321,7 +321,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "The item drew no public comment in its designated discussion period."
       },
       "votes": {
         "status": "recorded",
@@ -360,7 +360,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "No item-specific remarks were made before the Council acted."
       },
       "votes": {
         "status": "recorded",
@@ -400,7 +400,7 @@
           "against": 2,
           "other": 1
         },
-        "note": "This was one consent-agenda vote covering five actions. Within its official public-comment block, two speakers clearly opposed the Axon camera-system actions; one other speaker mentioned Axon without a clear request. Counts apply to the Axon-related portion of the combined vote, not to the unrelated consent actions."
+        "note": "This single consent vote covered five actions, including two Axon payments. Two speakers opposed the Axon camera-system actions; another mentioned Axon without taking a clear position. The counts do not apply to the unrelated consent items."
       },
       "votes": {
         "status": "recorded",
@@ -434,7 +434,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "No one spoke during this item's official public-comment opportunity."
       },
       "votes": {
         "status": "recorded",
@@ -468,7 +468,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "The item drew no public comment in its designated discussion period."
       },
       "votes": {
         "status": "recorded",
@@ -507,7 +507,7 @@
           "against": 14,
           "other": 1
         },
-        "note": "Transcript review found 15 speakers in the official Flock public-comment block: 14 clearly opposed the contract, 1 made an item-specific question/concern, and none clearly asked for approval."
+        "note": "Fifteen people spoke during the Flock comment block: 14 opposed the contract, one raised an item-specific question or concern, and no speaker clearly asked for approval."
       },
       "votes": {
         "status": "recorded",
@@ -545,7 +545,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "No item-specific remarks were made before the Council acted."
       },
       "votes": {
         "status": "recorded",
@@ -581,7 +581,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "No one spoke during this item's official public-comment opportunity."
       },
       "votes": {
         "status": "recorded",
@@ -620,7 +620,7 @@
           "against": 0,
           "other": 0
         },
-        "note": "Transcript review found one item-specific speaker who asked the Council to vote yes."
+        "note": "One resident urged a Yes vote, citing the program's potential benefit to people in crisis."
       },
       "votes": {
         "status": "recorded",
@@ -654,7 +654,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "The item drew no public comment in its designated discussion period."
       },
       "votes": {
         "status": "recorded",
@@ -688,7 +688,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "No item-specific remarks were made before the Council acted."
       },
       "votes": {
         "status": "recorded",
@@ -722,7 +722,7 @@
         "status": "none",
         "speaker_count": 0,
         "sentiment": "not-applicable",
-        "note": "Transcript review found no public comment during this action's official public-comment or public-hearing opportunity."
+        "note": "No one spoke during this item's official public-comment opportunity."
       },
       "votes": {
         "status": "recorded",
@@ -761,7 +761,7 @@
           "against": 0,
           "other": 1
         },
-        "note": "Transcript review found one speaker who supported the 39 Depot Project but questioned considering the initial and detailed bond resolutions at the same meeting; no clear request to approve or reject this resolution."
+        "note": "A resident supported the 39 Depot Project but questioned considering the initial and detailed bond resolutions together. It is coded as Other rather than for or against this resolution."
       },
       "votes": {
         "status": "recorded",
