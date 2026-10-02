@@ -4,7 +4,8 @@
   "methodology": {
     "comment_scope": "Only statements made during the official public-comment or public-hearing block for a specific action are counted toward that action.",
     "no_comment_meaning": "No public comment recorded is not evidence of public support.",
-    "outside_block_rule": "Statements made in Citizens Request for Hearing or another non-item-specific segment are not assigned to any vote."
+    "outside_block_rule": "Statements made in Citizens Request for Hearing or another non-item-specific segment are not assigned to any vote.",
+    "opinion_categories": { "for": "A speaker clearly asked the Council to approve or adopt the action.", "against": "A speaker clearly asked the Council to reject, deny, postpone, or remove the action.", "other": "An item-specific question, procedural concern, mixed view, or unclear position that is not a clear request to approve or reject." }
   },
   "actions": [
     {
