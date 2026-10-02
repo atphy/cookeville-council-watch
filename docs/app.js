@@ -58,11 +58,6 @@ function referenceMarkup(action) {
   return `<p class="reference"><span>${kind} number</span> ${number.join(' ')}</p>`;
 }
 
-function voteLabel(votes) {
-  if (votes.status === 'verification-needed') return 'Outcome recorded; individual votes need verification';
-  return Object.entries(votes.members).map(([name, vote]) => `${name}: ${vote}`).join(' · ');
-}
-
 function voteMarkup(votes) {
   if (votes.status === 'verification-needed') {
     return '<div class="council-vote pending"><span class="section-label">Council vote</span><span>Outcome recorded; individual member votes need verification</span></div>';
@@ -94,10 +89,6 @@ function show(data) {
     const visible = actions.filter(action => showNoComment.checked || action.public_comment.status === 'counted');
     records.innerHTML = visible.map(action => {
       const c = action.public_comment;
-      const evidence = action.evidence.map(e => {
-        const source = e.file.replace('-city-council-minutes.pdf', '');
-        return e.page ? `${source}, p. ${e.page}` : `${source}${e.note ? ` (${e.note})` : ''}`;
-      }).join('; ');
       const reference = referenceMarkup(action);
       return `<article class="record ${comparisonClass(action)}">
         <div class="record-head"><p>${action.date} · ${action.item_label}</p><span class="outcome">${action.outcome}</span></div>
@@ -105,6 +96,7 @@ function show(data) {
         <h3>${action.title}</h3>
         <div class="public-opinions"><span class="section-label">Public comment</span><div class="opinions">${opinionSummary(c)}<span class="comparison ${comparisonClass(action)}">${comparisonLabel(action)}</span></div></div>
         ${voteMarkup(action.votes)}
+        <details><summary>Comment note</summary><p>${c.note}</p></details>
       </article>`;
     }).join('') || '<p class="empty">No comment records need review yet. Check “Show items with no public comment” to browse the full record.</p>';
   }
@@ -112,6 +104,6 @@ function show(data) {
   render();
 }
 
-fetch('data/actions.json?v=20261002-clean-records-1').then(response => response.json()).then(show).catch(() => {
+fetch('data/actions.json?v=20261002-axon-comments-1').then(response => response.json()).then(show).catch(() => {
   records.innerHTML = '<p class="empty">The public data file could not be loaded.</p>';
 });
