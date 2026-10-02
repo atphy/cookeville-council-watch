@@ -64,7 +64,10 @@ function voteMarkup(votes) {
     const state = ['aye', 'nay'].includes(vote) ? vote : 'not-voting';
     return `<span class="member-vote ${state}"><b>${name}</b> <span>${labels[vote] || `(${vote})`}</span></span>`;
   }).join('');
-  return `<div class="council-vote"><span class="section-label">Council vote</span><span class="member-votes">${members}</span></div>`;
+  const warning = votes.status === 'recorded-with-warning'
+    ? `<span class="vote-warning">Names as logged in minutes; potential roster error.</span>`
+    : '';
+  return `<div class="council-vote"><span class="section-label">Council vote</span><span class="member-votes">${members}</span>${warning}</div>`;
 }
 
 function show(data) {
@@ -95,6 +98,6 @@ function show(data) {
   render();
 }
 
-fetch('data/actions.json?v=20261002-clear-headers-1').then(response => response.json()).then(show).catch(() => {
+fetch('data/actions.json?v=20261002-logged-votes-1').then(response => response.json()).then(show).catch(() => {
   records.innerHTML = '<p class="empty">The public data file could not be loaded.</p>';
 });
