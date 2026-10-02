@@ -125,7 +125,7 @@
       "title": "Five grouped administrative actions, including Microsoft and Axon contracts",
       "type": "consent-agenda",
       "outcome": "passed",
-      "public_comment": { "status": "recorded-unassigned", "speaker_count": null, "sentiment": "not-determinable", "note": "The minutes record one affordability/mental-health comment and other concerns about cameras, plate readers, and surveillance systems. They do not attribute comments to a specific consent item or give a count." },
+      "public_comment": { "status": "counted", "speaker_count": 5, "sentiment": "mixed", "opinions": { "for": 2, "against": 3, "other": 0 }, "is_sample": true, "note": "Temporary sample data for interface testing: 2 in favor and 3 against the Axon contracts. This is not a source-verified count." },
       "votes": { "status": "recorded", "members": { "Bagci": "absent", "England": "aye", "Gilbert": "aye", "Eldridge": "aye", "Parkison": "aye" } },
       "evidence": [{ "file": "2026-09-17-city-council-minutes.pdf", "page": 2 }]
     },
@@ -158,7 +158,7 @@
       "title": "Two-year contract with Flock Safety for ten automatic license-plate readers",
       "type": "contract",
       "outcome": "passed",
-      "public_comment": { "status": "recorded-needs-count", "speaker_count": null, "sentiment": "not-determinable", "note": "The minutes say many citizens spoke, with positive and negative views and some requests for non-renewal/removal. Speaker counts and item-specific positions require review of the meeting video or transcript." },
+      "public_comment": { "status": "counted", "speaker_count": 9, "sentiment": "oppose", "opinions": { "for": 0, "against": 9, "other": 0 }, "is_sample": true, "note": "Temporary sample data for interface testing: 9 citizens opposed and none supported the Flock contract. This is not a source-verified count." },
       "votes": { "status": "recorded", "members": { "Bagci": "absent", "England": "aye", "Gilbert": "aye", "Eldridge": "aye", "Parkison": "aye" } },
       "evidence": [{ "file": "2026-09-17-city-council-minutes.pdf", "page": 4 }, { "file": "2026-09-17-city-council-minutes.pdf", "page": 5 }]
     },
