@@ -1,0 +1,7 @@
+{
+  "purpose": "Original official meeting minutes used by the tracker. Files are kept unmodified; the SHA-256 checksum identifies the exact copy reviewed.",
+  "files": [
+    {"path":"official-minutes/2026-09-03-city-council-minutes.pdf","meeting_date":"2026-09-03","sha256":"4853c6d7a28e14ae1d133d6768b02b670cf8c3760dd3f4dfee114a79f7c36d1b","known_issue":"The roll call identifies Bagci, England, Gilbert, Eldridge, and Parkison, but multiple individual-vote blocks name Walker and Wheaton. Individual vote attribution from this document must be verified against video or corrected minutes."},
+    {"path":"official-minutes/2026-09-17-city-council-minutes.pdf","meeting_date":"2026-09-17","sha256":"d5a1f9acb82d759a1537a7843596046ff5701dda2e99306ace8f314ecc786de7"}
+  ]
+}
