@@ -90,7 +90,7 @@ function show(data) {
         <h3>${action.title}</h3>
         <div class="public-opinions"><span class="section-label">Public comment</span><div class="opinions">${opinionSummary(c)}<span class="comparison ${comparisonClass(action)}">${comparisonLabel(action)}</span></div></div>
         ${voteMarkup(action.votes)}
-        <details><summary>Comment note</summary><p>${c.note}</p></details>
+        <details><summary>Additional information</summary><p>${c.note}</p>${action.votes.note ? `<p><strong>Vote note:</strong> ${action.votes.note}</p>` : ''}</details>
       </article>`;
     }).join('') || '<p class="empty">No comment records need review yet. Check “Show items with no public comment” to browse the full record.</p>';
   }
@@ -98,6 +98,6 @@ function show(data) {
   render();
 }
 
-fetch('data/actions.json?v=20261002-logged-votes-1').then(response => response.json()).then(show).catch(() => {
+fetch('data/actions.json?v=20261002-video-verified-votes-1').then(response => response.json()).then(show).catch(() => {
   records.innerHTML = '<p class="empty">The public data file could not be loaded.</p>';
 });
