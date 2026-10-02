@@ -16,13 +16,33 @@ function opinions(comment) {
   return null;
 }
 
-function opinionClass(comment) {
+function sentimentDirection(comment) {
   const counts = opinions(comment);
-  if (!counts) return comment.status === 'none' ? 'none' : 'review';
+  if (!counts) return 'review';
   if (counts.against > counts.for && counts.against > 0) return 'against';
   if (counts.for > counts.against && counts.for > 0) return 'for';
-  if (counts.other > 0) return 'other';
+  if (counts.for || counts.against || counts.other) return 'mixed';
   return 'none';
+}
+
+function comparisonClass(action) {
+  const direction = sentimentDirection(action.public_comment);
+  if (direction === 'none') return 'none';
+  if (direction === 'review') return 'review';
+  if (direction === 'mixed') return 'other';
+  if (action.outcome === 'passed') return direction === 'for' ? 'alignment' : 'discrepancy';
+  if (action.outcome === 'rejected') return direction === 'against' ? 'alignment' : 'discrepancy';
+  return 'other';
+}
+
+function comparisonLabel(action) {
+  const direction = sentimentDirection(action.public_comment);
+  if (action.public_comment.is_sample) return 'Temporary sample data';
+  if (comparisonClass(action) === 'alignment') return 'Vote aligned with public sentiment';
+  if (comparisonClass(action) === 'discrepancy') return 'Vote conflicts with public sentiment';
+  if (direction === 'mixed') return 'Mixed public opinion';
+  if (direction === 'review') return 'Needs manual review';
+  return 'No public comment recorded';
 }
 
 function opinionSummary(comment) {
@@ -49,10 +69,10 @@ function show(data) {
     records.innerHTML = visible.map(action => {
       const c = action.public_comment;
       const evidence = action.evidence.map(e => `${e.file.replace('-city-council-minutes.pdf', '')}, p. ${e.page}`).join('; ');
-      return `<article class="record ${opinionClass(c)}">
+      return `<article class="record ${comparisonClass(action)}">
         <div class="record-head"><p>${action.date} · ${action.item_label}</p><span class="outcome">${action.outcome}</span></div>
         <h3>${action.title}</h3>
-        <div class="opinions">${opinionSummary(c)}</div>
+        <div class="opinions">${opinionSummary(c)}<span class="comparison ${comparisonClass(action)}">${comparisonLabel(action)}</span></div>
         <details><summary>Votes & source</summary><p><strong>Vote:</strong> ${voteLabel(action.votes)}</p><p><strong>Evidence:</strong> ${evidence}</p><p>${c.note}</p></details>
       </article>`;
     }).join('') || '<p class="empty">No comment records need review yet. Check “Show items with no public comment” to browse the full record.</p>';
