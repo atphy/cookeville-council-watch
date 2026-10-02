@@ -331,15 +331,20 @@
     {
       "id": "2026-09-17-consent-agenda",
       "date": "2026-09-17",
-      "item_label": "6 · Consent agenda",
-      "title": "Five grouped administrative actions, including Microsoft and Axon contracts",
+      "item_label": "6 · Consent agenda vote",
+      "title": "Consent-agenda vote, including the two Axon contract payments",
       "type": "consent-agenda",
       "outcome": "passed",
       "public_comment": {
-        "status": "recorded-unassigned",
-        "speaker_count": null,
-        "sentiment": "not-determinable",
-        "note": "Transcript review found item-specific Axon-related remarks during the grouped consent-agenda block, but speakers did not distinguish the two Axon contracts from the other grouped actions. No count is assigned to this combined vote."
+        "status": "counted",
+        "speaker_count": 3,
+        "sentiment": "oppose",
+        "opinions": {
+          "for": 0,
+          "against": 2,
+          "other": 1
+        },
+        "note": "This was one consent-agenda vote covering five actions. Within its official public-comment block, two speakers clearly opposed the Axon camera-system actions; one other speaker mentioned Axon without a clear request. Counts apply to the Axon-related portion of the combined vote, not to the unrelated consent actions."
       },
       "votes": {
         "status": "recorded",
