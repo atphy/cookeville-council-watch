@@ -31,7 +31,7 @@ body {
   margin:0 0 .6rem; color:#ffdfb8; text-transform:uppercase;
   letter-spacing:.13em; font-weight:800; font-size:.76rem;
 }
-h1 { margin:0; font-family:Georgia,serif; font-size:clamp(2.15rem,5vw,3.8rem); line-height:1; letter-spacing:-.04em; }
+h1 { margin:0; font-family:Georgia,serif; font-size:clamp(2rem,4vw,3.25rem); line-height:1; letter-spacing:-.04em; white-space:nowrap; }
 .method,.sources {
   background:#ffffffcc; border:1px solid #fff; border-radius:1rem;
   padding:1.1rem 1.25rem; margin:2rem 0; box-shadow:0 10px 32px #2a174e0d;
@@ -126,6 +126,7 @@ footer { margin-top:3rem; padding:1.4rem 0; background:#2a174e; color:#e7dff6; f
   .legend { display:grid; grid-template-columns:1fr; gap:.55rem; }
 }
 @media (max-width:650px) {
+  h1 { white-space:normal; }
   .masthead { padding:2.5rem 0 2.1rem; }
   .toolbar,.record-head { align-items:flex-start; flex-direction:column; }
   .toolbar { margin-bottom:1rem; }
