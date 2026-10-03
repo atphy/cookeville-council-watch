@@ -39,7 +39,7 @@ h1 { margin:0; font-family:Georgia,serif; font-size:clamp(2.25rem,6vw,4.5rem); l
 .sources a { color:#4b3192; font-weight:750; }
 h2 { font-size:1.25rem; margin:.1rem 0 .5rem; } h3 { font-size:1.16rem; margin:.1rem 0 1rem; line-height:1.28; }
 .summary {
-  display:grid; grid-template-columns:repeat(3,1fr); gap:.85rem;
+  display:grid; grid-template-columns:repeat(4,1fr); gap:.85rem;
   width:min(860px,100%); margin:1.65rem auto 2.15rem;
 }
 .summary div {
@@ -47,6 +47,18 @@ h2 { font-size:1.25rem; margin:.1rem 0 .5rem; } h3 { font-size:1.16rem; margin:.
   border:1px solid #fff; border-top:6px solid var(--violet);
   background:linear-gradient(145deg,#eeebff,#dcd5fb);
   box-shadow:0 9px 25px #2a174e16;
+}
+.summary div.passed {
+  border-color:#d6f0e5; border-top-color:var(--green);
+  background:linear-gradient(145deg,#effbf5,#d4f0e2);
+}
+.summary div.deferred {
+  border-color:#fff1d4; border-top-color:var(--gold);
+  background:linear-gradient(145deg,#fff8e8,#f8e3ae);
+}
+.summary div.rejected {
+  border-color:#efe4ff; border-top-color:var(--violet);
+  background:linear-gradient(145deg,#f5efff,#e3d8fc);
 }
 .summary div.against {
   border-color:#ffe9eb; border-top-color:var(--coral);
@@ -57,7 +69,7 @@ h2 { font-size:1.25rem; margin:.1rem 0 .5rem; } h3 { font-size:1.16rem; margin:.
   background:linear-gradient(145deg,#fff8e8,#f8e3ae);
 }
 .summary strong { display:block; font-family:Georgia,serif; font-size:2.35rem; line-height:.95; }
-.summary span { display:block; margin-top:.45rem; color:#4f4868; font-size:.84rem; font-weight:700; line-height:1.25; }
+.summary span { display:block; margin-top:.45rem; color:#4f4868; font-size:.84rem; font-weight:700; line-height:1.25; }.summary small { display:block; margin-top:.25rem; color:#6b637c; font-size:.73rem; font-weight:650; }.summary small b { color:#3f3657; }
 .toolbar { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:.75rem; }
 .toolbar h2 { margin:0; }
 .check {
