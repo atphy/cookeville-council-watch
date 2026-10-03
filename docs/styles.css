@@ -31,7 +31,7 @@ body {
   margin:0 0 .6rem; color:#ffdfb8; text-transform:uppercase;
   letter-spacing:.13em; font-weight:800; font-size:.76rem;
 }
-h1 { margin:0; font-family:Georgia,serif; font-size:clamp(2.25rem,6vw,4.5rem); line-height:1; letter-spacing:-.04em; }
+h1 { margin:0; font-family:Georgia,serif; font-size:clamp(2.15rem,5vw,3.8rem); line-height:1; letter-spacing:-.04em; }
 .method,.sources {
   background:#ffffffcc; border:1px solid #fff; border-radius:1rem;
   padding:1.1rem 1.25rem; margin:2rem 0; box-shadow:0 10px 32px #2a174e0d;
