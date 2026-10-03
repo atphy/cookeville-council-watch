@@ -1,5 +1,8 @@
 const records = document.querySelector('#records');
 const showNoComment = document.querySelector('#show-no-comment');
+const featuredFinding = document.querySelector('#featured-finding');
+const findingDetail = document.querySelector('#finding-detail');
+const meetingTimeline = document.querySelector('#meeting-timeline');
 
 function opinions(comment) {
   if (comment.opinions) return comment.opinions;
@@ -55,6 +58,50 @@ function agendaItemLabel(action) {
   return `Agenda item ${item}${rest.length ? ` · ${rest.join(' · ')}` : ''}`;
 }
 
+function outcomeLabel(action) {
+  return action.outcome === 'passed' ? 'Passed' : action.outcome.charAt(0).toUpperCase() + action.outcome.slice(1);
+}
+
+function publicSummary(action) {
+  const direction = sentimentDirection(action.public_comment);
+  if (direction === 'against') return 'Net public opposition';
+  if (direction === 'for') return 'Net public support';
+  if (direction === 'mixed') return 'Mixed or unclear';
+  if (direction === 'review') return 'Record needs review';
+  return 'No public comment recorded';
+}
+
+function decisionFlowMarkup(action) {
+  const comparison = comparisonClass(action);
+  return `<div class="decision-flow ${comparison}" aria-label="Public comment and council action">
+    <div class="flow-step public ${sentimentDirection(action.public_comment)}"><span>Public comment</span><b>${publicSummary(action)}</b></div>
+    <span class="flow-arrow" aria-hidden="true">→</span>
+    <div class="flow-step action ${comparison}"><span>Council action</span><b>${outcomeLabel(action)}</b></div>
+  </div>`;
+}
+
+function formatMeetingDate(date) {
+  return new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })
+    .format(new Date(`${date}T00:00:00Z`));
+}
+
+function renderMeetingTimeline(actions) {
+  const meetings = [...new Map(actions.map(action => [action.date, []])).entries()]
+    .map(([date]) => {
+      const meetingActions = actions.filter(action => action.date === date);
+      const comments = meetingActions.filter(action => action.public_comment.status === 'counted').length;
+      const discrepancies = meetingActions.filter(action => comparisonClass(action) === 'discrepancy').length;
+      return { date, total: meetingActions.length, comments, discrepancies };
+    })
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  meetingTimeline.innerHTML = meetings.map(meeting => `<li class="meeting-stop">
+    <span class="timeline-dot" aria-hidden="true"></span>
+    <time datetime="${meeting.date}">${formatMeetingDate(meeting.date)}</time>
+    <div><b>${meeting.total} action${meeting.total === 1 ? '' : 's'} logged</b><span>${meeting.comments} with public comment · ${meeting.discrepancies} passed despite opposition</span></div>
+  </li>`).join('');
+}
+
 function voteMarkup(votes) {
   if (votes.status === 'verification-needed') {
     return '<div class="council-vote pending"><span class="section-label">Council vote</span><span>Outcome recorded; individual member votes need verification</span></div>';
@@ -80,6 +127,9 @@ function show(data) {
   const commentedActions = actions.filter(action => action.public_comment.status === 'counted').length;
   document.querySelector('#opposition-pass-count').textContent = passedDespiteOpposition;
   document.querySelector('#commented-action-count').textContent = commentedActions;
+  featuredFinding.textContent = `${passedDespiteOpposition} action${passedDespiteOpposition === 1 ? '' : 's'} passed despite net public opposition`;
+  findingDetail.textContent = 'A comparison of recorded outcomes with item-specific public-comment blocks in the meetings logged below.';
+  renderMeetingTimeline(actions);
 
   function render() {
     const visible = actions.filter(action => showNoComment.checked || action.public_comment.status === 'counted');
@@ -90,6 +140,7 @@ function show(data) {
         <div class="record-head"><p>${action.date} · ${agendaItem}</p><span class="outcome">${action.outcome}</span></div>
         <h3>${action.title}</h3>
         <div class="public-opinions"><span class="section-label">Public comment</span><div class="opinions">${opinionSummary(c)}<span class="comparison ${comparisonClass(action)}">${comparisonLabel(action)}</span></div></div>
+        ${decisionFlowMarkup(action)}
         ${voteMarkup(action.votes)}
         <details><summary>Additional information</summary><p>${c.note}</p>${action.votes.note ? `<p><strong>Vote note:</strong> ${action.votes.note}</p>` : ''}</details>
       </article>`;
