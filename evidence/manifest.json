@@ -45,11 +45,12 @@
       "status": "Supplemental source for public-comment counts; approved minutes available."
     },
     {
-      "path": "official-minutes/2026-10-01-city-council-minutes.pdf",
+      "path": "official-minutes/2026-10-01-city-council-minutes-extract.txt",
       "meeting_date": "2026-10-01",
-      "source_type": "official minutes",
-      "sha256": "7da0eaf714e0b7b3cb3c9b4b057f3388ad30e8b072b24a49c133a01f98d260fe",
-      "status": "Approved minutes supplied October 20, 2026."
+      "source_type": "official minutes text extract (pages 1-6)",
+      "sha256": "32d36aaaec7a78ef4f1f5881fddce79cc18da26bd9ce3c4b248bebc0965007b3",
+      "source_pdf_sha256": "7da0eaf714e0b7b3cb3c9b4b057f3388ad30e8b072b24a49c133a01f98d260fe",
+      "note": "Text extraction of the action-minute pages from the approved source PDF; the source PDF fingerprint is retained for verification."
     }
   ]
 }
