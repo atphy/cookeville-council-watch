@@ -3,7 +3,7 @@
   "notes": [
     "Official minutes are the primary source for formal outcomes and member votes.",
     "Transcripts are supplemental materials used to count item-specific public remarks. Transcript-based counts are labeled in the tracker.",
-    "October 1, 2026 materials are archived for review; formal tracker entries await official minutes."
+    "October 1, 2026 formal tracker entries are based on approved official minutes; transcript review supplements only the item-specific public-comment counts."
   ],
   "files": [
     {
@@ -42,7 +42,14 @@
       "meeting_date": "2026-10-01",
       "source_type": "supplied transcript",
       "sha256": "e4c8c5091e1b2aa54a74206960b7f8213bc1e821c674718fe793e93aa67fca46",
-      "status": "Awaiting official minutes before formal tracker entry."
+      "status": "Supplemental source for public-comment counts; approved minutes available."
+    },
+    {
+      "path": "official-minutes/2026-10-01-city-council-minutes.pdf",
+      "meeting_date": "2026-10-01",
+      "source_type": "official minutes",
+      "sha256": "7da0eaf714e0b7b3cb3c9b4b057f3388ad30e8b072b24a49c133a01f98d260fe",
+      "status": "Approved minutes supplied October 20, 2026."
     }
   ]
 }
