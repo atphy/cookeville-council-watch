@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-20",
   "methodology": {
     "comment_scope": "Only statements made during the official public-comment or public-hearing block for a specific action are counted toward that action.",
     "no_comment_meaning": "No public comment recorded is not evidence of public support.",
@@ -781,6 +781,379 @@
         {
           "file": "2026-09-17-city-council-transcript.txt",
           "note": "Transcript review; item public-comment block"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-01-agenda-approval",
+      "date": "2026-10-01",
+      "item_label": "3 · Agenda approval",
+      "title": "Approve agenda as presented",
+      "type": "procedural",
+      "outcome": "passed",
+      "public_comment": {
+        "status": "none",
+        "speaker_count": 0,
+        "sentiment": "not-applicable",
+        "note": "The minutes do not record an item-specific public-comment block for agenda approval."
+      },
+      "votes": {
+        "status": "recorded",
+        "members": {
+          "Bagci": "aye",
+          "England": "aye",
+          "Gilbert": "aye",
+          "Eldridge": "aye",
+          "Parkison": "aye"
+        }
+      },
+      "evidence": [
+        {
+          "file": "2026-10-01-city-council-minutes.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "2026-10-01-approve-2026-09-17-minutes",
+      "date": "2026-10-01",
+      "item_label": "5 · Old business",
+      "title": "Approve minutes of the September 17, 2026 council meeting",
+      "type": "minutes-approval",
+      "outcome": "passed",
+      "public_comment": {
+        "status": "none",
+        "speaker_count": 0,
+        "sentiment": "not-applicable",
+        "note": "The minutes state that there were no public comments concerning this item."
+      },
+      "votes": {
+        "status": "recorded",
+        "members": {
+          "Bagci": "aye",
+          "England": "aye",
+          "Gilbert": "aye",
+          "Eldridge": "aye",
+          "Parkison": "aye"
+        }
+      },
+      "evidence": [
+        {
+          "file": "2026-10-01-city-council-minutes.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "2026-10-01-ordinance-026-08-14",
+      "date": "2026-10-01",
+      "item_label": "5 · Ordinance 026-08-14",
+      "title": "Second and final reading: Dodson Branch Road annexation-area rezoning",
+      "type": "ordinance",
+      "outcome": "passed",
+      "public_comment": {
+        "status": "none",
+        "speaker_count": 0,
+        "sentiment": "not-applicable",
+        "note": "The minutes state that there were no public comments concerning this item."
+      },
+      "votes": {
+        "status": "recorded",
+        "members": {
+          "Bagci": "aye",
+          "England": "aye",
+          "Gilbert": "aye",
+          "Eldridge": "aye",
+          "Parkison": "aye"
+        }
+      },
+      "evidence": [
+        {
+          "file": "2026-10-01-city-council-minutes.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "2026-10-01-west-stevens-disposition",
+      "date": "2026-10-01",
+      "item_label": "5 · Property action",
+      "title": "West Stevens Street surplus-property sale/disposition",
+      "type": "property",
+      "outcome": "passed",
+      "public_comment": {
+        "status": "none",
+        "speaker_count": 0,
+        "sentiment": "not-applicable",
+        "note": "The minutes state that there were no public comments concerning this item."
+      },
+      "votes": {
+        "status": "recorded",
+        "members": {
+          "Bagci": "aye",
+          "England": "aye",
+          "Gilbert": "aye",
+          "Eldridge": "aye",
+          "Parkison": "aye"
+        }
+      },
+      "evidence": [
+        {
+          "file": "2026-10-01-city-council-minutes.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "2026-10-01-69kv-materials-bid",
+      "date": "2026-10-01",
+      "item_label": "6A · Consent agenda",
+      "title": "Award bid for materials for the 69 KV project",
+      "type": "bid-award",
+      "outcome": "passed",
+      "public_comment": {
+        "status": "none",
+        "speaker_count": 0,
+        "sentiment": "not-applicable",
+        "note": "The minutes state that there were no public comments concerning the consent agenda."
+      },
+      "votes": {
+        "status": "recorded",
+        "members": {
+          "Bagci": "aye",
+          "England": "aye",
+          "Gilbert": "aye",
+          "Eldridge": "aye",
+          "Parkison": "aye"
+        }
+      },
+      "evidence": [
+        {
+          "file": "2026-10-01-city-council-minutes.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "2026-10-01-100-amp-cutouts-bid",
+      "date": "2026-10-01",
+      "item_label": "6B · Consent agenda",
+      "title": "Award bid for 200 100-amp cutouts",
+      "type": "bid-award",
+      "outcome": "passed",
+      "public_comment": {
+        "status": "none",
+        "speaker_count": 0,
+        "sentiment": "not-applicable",
+        "note": "The minutes state that there were no public comments concerning the consent agenda."
+      },
+      "votes": {
+        "status": "recorded",
+        "members": {
+          "Bagci": "aye",
+          "England": "aye",
+          "Gilbert": "aye",
+          "Eldridge": "aye",
+          "Parkison": "aye"
+        }
+      },
+      "evidence": [
+        {
+          "file": "2026-10-01-city-council-minutes.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "2026-10-01-f150-trucks-purchase",
+      "date": "2026-10-01",
+      "item_label": "6C · Consent agenda",
+      "title": "Purchase four 2027 Ford F-150 4x4 Super Cab trucks for Water Quality Control",
+      "type": "purchase",
+      "outcome": "passed",
+      "public_comment": {
+        "status": "none",
+        "speaker_count": 0,
+        "sentiment": "not-applicable",
+        "note": "The minutes state that there were no public comments concerning the consent agenda."
+      },
+      "votes": {
+        "status": "recorded",
+        "members": {
+          "Bagci": "aye",
+          "England": "aye",
+          "Gilbert": "aye",
+          "Eldridge": "aye",
+          "Parkison": "aye"
+        }
+      },
+      "evidence": [
+        {
+          "file": "2026-10-01-city-council-minutes.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "2026-10-01-ordinance-026-09-15",
+      "date": "2026-10-01",
+      "item_label": "7A · Ordinance 026-09-15",
+      "title": "First reading: 79 Messenger Road rezoning to General Commercial",
+      "type": "ordinance",
+      "outcome": "passed",
+      "public_comment": {
+        "status": "none",
+        "speaker_count": 0,
+        "sentiment": "not-applicable",
+        "note": "The public hearing was opened later in the meeting; no one spoke."
+      },
+      "votes": {
+        "status": "recorded",
+        "members": {
+          "Bagci": "aye",
+          "England": "aye",
+          "Gilbert": "aye",
+          "Eldridge": "aye",
+          "Parkison": "aye"
+        }
+      },
+      "evidence": [
+        {
+          "file": "2026-10-01-city-council-minutes.pdf",
+          "page": 3
+        },
+        {
+          "file": "2026-10-01-city-council-transcript.txt",
+          "note": "Transcript review; the later item-specific public hearing had no speakers."
+        }
+      ]
+    },
+    {
+      "id": "2026-10-01-ordinance-026-09-16",
+      "date": "2026-10-01",
+      "item_label": "7B · Ordinance 026-09-16",
+      "title": "First reading: Dogwood Circle and Forrest Road rezoning from RS-15 to RS-10",
+      "type": "ordinance",
+      "outcome": "passed",
+      "public_comment": {
+        "status": "counted",
+        "speaker_count": 8,
+        "sentiment": "oppose",
+        "opinions": {
+          "for": 0,
+          "against": 6,
+          "other": 2
+        },
+        "note": "Eight people spoke in the official public hearing. Six clearly asked the Council to keep the existing zoning or deny the change; two raised flooding, traffic, or neighborhood concerns without a clear request to approve or reject."
+      },
+      "votes": {
+        "status": "recorded",
+        "members": {
+          "Bagci": "aye",
+          "England": "aye",
+          "Gilbert": "aye",
+          "Eldridge": "aye",
+          "Parkison": "aye"
+        }
+      },
+      "evidence": [
+        {
+          "file": "2026-10-01-city-council-minutes.pdf",
+          "page": 4
+        },
+        {
+          "file": "2026-10-01-city-council-transcript.txt",
+          "note": "Transcript review; official public-hearing speaker count and sentiment coding."
+        }
+      ]
+    },
+    {
+      "id": "2026-10-01-rotor-assembly-emergency-purchase",
+      "date": "2026-10-01",
+      "item_label": "7C · Purchase action",
+      "title": "Emergency purchase of rotor assembly and bearings for the Wastewater Treatment Plant oxidation ditch",
+      "type": "purchase",
+      "outcome": "passed",
+      "public_comment": {
+        "status": "none",
+        "speaker_count": 0,
+        "sentiment": "not-applicable",
+        "note": "The minutes state that there were no public comments concerning this item."
+      },
+      "votes": {
+        "status": "recorded",
+        "members": {
+          "Bagci": "aye",
+          "England": "aye",
+          "Gilbert": "aye",
+          "Eldridge": "aye",
+          "Parkison": "aye"
+        }
+      },
+      "evidence": [
+        {
+          "file": "2026-10-01-city-council-minutes.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "2026-10-01-east-cookeville-waterline-notice",
+      "date": "2026-10-01",
+      "item_label": "7D · Infrastructure action",
+      "title": "Issue Notice to Proceed for the East Cookeville Galvanized Waterline Replacement",
+      "type": "infrastructure",
+      "outcome": "passed",
+      "public_comment": {
+        "status": "none",
+        "speaker_count": 0,
+        "sentiment": "not-applicable",
+        "note": "The minutes state that there were no public comments concerning this item."
+      },
+      "votes": {
+        "status": "recorded",
+        "members": {
+          "Bagci": "aye",
+          "England": "aye",
+          "Gilbert": "aye",
+          "Eldridge": "aye",
+          "Parkison": "aye"
+        }
+      },
+      "evidence": [
+        {
+          "file": "2026-10-01-city-council-minutes.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "2026-10-01-buck-mountain-engineering-contract",
+      "date": "2026-10-01",
+      "item_label": "7E · Contract action",
+      "title": "Authorize Buck Mountain Water Tank engineering-services contract",
+      "type": "contract",
+      "outcome": "passed",
+      "public_comment": {
+        "status": "none",
+        "speaker_count": 0,
+        "sentiment": "not-applicable",
+        "note": "The minutes state that there were no public comments concerning this item."
+      },
+      "votes": {
+        "status": "recorded",
+        "members": {
+          "Bagci": "aye",
+          "England": "aye",
+          "Gilbert": "aye",
+          "Eldridge": "aye",
+          "Parkison": "aye"
+        }
+      },
+      "evidence": [
+        {
+          "file": "2026-10-01-city-council-minutes.pdf",
+          "page": 5
         }
       ]
     }
